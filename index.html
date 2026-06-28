@@ -5,87 +5,103 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Photography - Capture Every Moment</title>
-    <link rel ="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   </head>
   <body>
-    <div class="main_box">
-      <input type="checkbox" id="check" />
-      <div class="btn_one">
-        <label for="check" style="color: white">
-          <i class="fa-solid fa-bars"></i>
-        </label>
+
+    <input type="checkbox" id="check" />
+    <div class="btn_one">
+      <label for="check"><i class="fa-solid fa-bars"></i></label>
+    </div>
+
+    <div class="sidebar_menu">
+      <div class="logo"><a href="#">PHOTOGRAPHY</a></div>
+      <div class="btn_two">
+        <label for="check"><i class="fa-solid fa-xmark"></i></label>
       </div>
-
-      <div class="sidebar_menu">
-        <div class="logo">
-          <a href="#">PHOTOGRAPHY</a>
-        </div>
-
-        <div class="btn_two">
-          <label for="check" style="color: grey">
-            <i class="fa-solid fa-xmark"></i>
-          </label>
-        </div>
-
-        <div class="menu">
-          <ul>
-            <li>
-              <i class="fa-solid fa-image"></i>
-              <a href="#gallery">Gallery</a>
-            </li>
-            <li>
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              <a href="#shortcuts">Shortcuts</a>
-            </li>
-            <li>
-              <i class="fa-solid fa-photo-film"></i>
-              <a href="#exhibits">Exhibits</a>
-            </li>
-            <li>
-              <i class="fa-solid fa-calendar-days"></i>
-              <a href="#events">Events</a>
-            </li>
-            <li>
-              <i class="fa-solid fa-store"></i>
-              <a href="#store">Store</a>
-            </li>
-            <li>
-              <i class="fa-solid fa-phone"></i>
-              <a href="#contact">Contact</a>
-            </li>
-            <li>
-              <i class="fa-regular fa-comments"></i>
-              <a href="#feedback">Feedback</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="social_media">
-          <ul>
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-          </ul>
-        </div>
+      <div class="menu">
+        <ul>
+          <li><i class="fa-solid fa-image"></i><a href="#gallery">Gallery</a></li>
+          <li><i class="fa-solid fa-arrow-up-right-from-square"></i><a href="#shortcuts">Shortcuts</a></li>
+          <li><i class="fa-solid fa-photo-film"></i><a href="#exhibits">Exhibits</a></li>
+          <li><i class="fa-solid fa-calendar-days"></i><a href="#events">Events</a></li>
+          <li><i class="fa-solid fa-store"></i><a href="#store">Store</a></li>
+          <li><i class="fa-solid fa-phone"></i><a href="#contact">Contact</a></li>
+          <li><i class="fa-regular fa-comments"></i><a href="#feedback">Feedback</a></li>
+        </ul>
       </div>
-
-      <!-- Hero Overlay Text (Optional) -->
-      <div class="hero_content">
-        <h1>Capture Light. Create Moments.</h1>
-        <p>Professional Photography Portfolio</p>
+      <div class="social_media">
+        <ul>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </ul>
       </div>
     </div>
 
-    <!-- Gallery Section -->
+    <!-- ===== HERO: TRUE MOSAIC COLLAGE ===== -->
+    <section class="hero">
+      <div class="mosaic">
+
+        <!-- 1. Misty Forest — large left anchor -->
+        <div class="tile t1">
+          <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=900&h=900&fit=crop&q=80" alt="Misty Forest" />
+        </div>
+
+        <!-- 2. Desert Dunes — top centre -->
+        <div class="tile t2">
+          <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&h=600&fit=crop&q=80" alt="Desert Dunes" />
+        </div>
+
+        <!-- 3. Mountain Peak — top right -->
+        <div class="tile t3">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=700&h=800&fit=crop&q=80" alt="Mountain Peak" />
+        </div>
+
+        <!-- 4. City Night — centre mid -->
+        <div class="tile t4">
+          <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&h=500&fit=crop&q=80" alt="City Night" />
+        </div>
+
+        <!-- 5. Cherry Blossom — right mid -->
+        <div class="tile t5">
+          <img src="https://images.unsplash.com/photo-1522383225653-ed111181a951?w=700&h=500&fit=crop&q=80" alt="Cherry Blossom" />
+        </div>
+
+        <!-- 6. Portrait — bottom left -->
+        <div class="tile t6">
+          <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&h=700&fit=crop&q=80" alt="Portrait" />
+        </div>
+
+        <!-- 7. Lavender Field — bottom centre -->
+        <div class="tile t7">
+          <img src="https://images.unsplash.com/photo-1499002238440-d264edd596ec?w=800&h=600&fit=crop&q=80" alt="Lavender Field" />
+        </div>
+
+        <!-- 8. Wedding — bottom right -->
+        <div class="tile t8">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=700&h=600&fit=crop&q=80" alt="Wedding" />
+        </div>
+
+      </div>
+
+      <!-- Overlay + headline -->
+      <div class="hero_overlay">
+        <div class="hero_text">
+          <span class="hero_eyebrow">Portfolio · 2024</span>
+          <h1>Capture Light.<br />Create Moments.</h1>
+          <p>Professional Photography &amp; Visual Storytelling</p>
+          <a href="#gallery" class="hero_cta">View Gallery <i class="fa-solid fa-arrow-down"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GALLERY SECTION ===== -->
     <section id="gallery" class="gallery_section">
       <div class="gallery_header">
         <h2>Recent Works</h2>
@@ -94,84 +110,119 @@
 
       <div class="gallery_grid">
         <div class="gallery_item">
-          <div class="gallery_image" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop');">
-            <div class="gallery_overlay">
-              <h3>Portraits</h3>
-            </div>
+          <div class="gallery_image" style="background-image: url('https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&h=600&fit=crop&q=80');">
+            <div class="gallery_overlay"><h3>Portraits</h3></div>
           </div>
         </div>
-
         <div class="gallery_item">
-          <div class="gallery_image" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=500&fit=crop');">
-            <div class="gallery_overlay">
-              <h3>Landscapes</h3>
-            </div>
+          <div class="gallery_image" style="background-image: url('https://images.unsplash.com/photo-1499002238440-d264edd596ec?w=600&h=600&fit=crop&q=80');">
+            <div class="gallery_overlay"><h3>Landscapes</h3></div>
           </div>
         </div>
-
         <div class="gallery_item">
-          <div class="gallery_image" style="background-image: url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=500&h=500&fit=crop');">
-            <div class="gallery_overlay">
-              <h3>Fashion</h3>
-            </div>
+          <div class="gallery_image" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop&q=80');">
+            <div class="gallery_overlay"><h3>Fashion</h3></div>
           </div>
         </div>
-
         <div class="gallery_item">
-          <div class="gallery_image" style="background-image: url('https://images.unsplash.com/photo-1509631179647-0177331693ae?w=500&h=500&fit=crop');">
-            <div class="gallery_overlay">
-              <h3>Editorial</h3>
-            </div>
+          <div class="gallery_image" style="background-image: url('https://images.unsplash.com/photo-1444723121867-7a241cacace9?w=600&h=600&fit=crop&q=80');">
+            <div class="gallery_overlay"><h3>Aerial</h3></div>
           </div>
         </div>
-
         <div class="gallery_item">
-          <div class="gallery_image" style="background-image: url('https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=500&h=500&fit=crop');">
-            <div class="gallery_overlay">
-              <h3>Events</h3>
-            </div>
+          <div class="gallery_image" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=600&fit=crop&q=80');">
+            <div class="gallery_overlay"><h3>Weddings</h3></div>
           </div>
         </div>
-
         <div class="gallery_item">
-          <div class="gallery_image" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=500&fit=crop');">
-            <div class="gallery_overlay">
-              <h3>Commercial</h3>
-            </div>
+          <div class="gallery_image" style="background-image: url('https://images.unsplash.com/photo-1490750967868-88df5691cc3c?w=600&h=600&fit=crop&q=80');">
+            <div class="gallery_overlay"><h3>Macro</h3></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Other Sections (Placeholders) -->
-    <section id="shortcuts" class="section_placeholder">
-      <h2>Shortcuts</h2>
-      <p>Quick access to your favorite galleries and collections</p>
+    <!-- ===== CONSOLIDATED INFO BLOCK ===== -->
+    <section class="info_block">
+      <div class="info_block_inner">
+
+        <div id="shortcuts" class="info_card">
+          <div class="info_card_icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+          <h3>Shortcuts</h3>
+          <p>Quick access to your favourite galleries and curated collections.</p>
+          <div class="info_card_links">
+            <a href="#">Best of 2024</a>
+            <a href="#">Black &amp; White</a>
+            <a href="#">Nature Series</a>
+          </div>
+        </div>
+
+        <div id="exhibits" class="info_card">
+          <div class="info_card_icon"><i class="fa-solid fa-photo-film"></i></div>
+          <h3>Exhibits</h3>
+          <p>Curated exhibitions and featured collections on display this season.</p>
+          <div class="info_card_links">
+            <a href="#">Urban Souls — Aug 2024</a>
+            <a href="#">Light &amp; Shadow — Sep 2024</a>
+          </div>
+        </div>
+
+        <div id="events" class="info_card">
+          <div class="info_card_icon"><i class="fa-solid fa-calendar-days"></i></div>
+          <h3>Events</h3>
+          <p>Photography workshops, photo walks, and open exhibitions near you.</p>
+          <div class="info_card_links">
+            <a href="#">Workshop: Street Photography</a>
+            <a href="#">Photo Walk — Old City</a>
+          </div>
+        </div>
+
+        <div id="store" class="info_card">
+          <div class="info_card_icon"><i class="fa-solid fa-store"></i></div>
+          <h3>Store</h3>
+          <p>Purchase fine-art prints, albums, and professional photography packages.</p>
+          <div class="info_card_links">
+            <a href="#">Fine Art Prints</a>
+            <a href="#">Photo Albums</a>
+            <a href="#">Gift Cards</a>
+          </div>
+        </div>
+
+        <div id="contact" class="info_card info_card--wide">
+          <div class="info_card_icon"><i class="fa-solid fa-phone"></i></div>
+          <h3>Contact</h3>
+          <p>Available for bookings, collaborations, and general inquiries.</p>
+          <div class="contact_details">
+            <span><i class="fa-solid fa-envelope"></i> hello@photography.com</span>
+            <span><i class="fa-solid fa-phone"></i> +91 98765 43210</span>
+            <span><i class="fa-solid fa-location-dot"></i> Lucknow, India</span>
+          </div>
+        </div>
+
+        <div id="feedback" class="info_card info_card--wide">
+          <div class="info_card_icon"><i class="fa-regular fa-comments"></i></div>
+          <h3>Feedback</h3>
+          <p>We'd love to hear from you. Drop a message below.</p>
+          <div class="feedback_form">
+            <input type="text" placeholder="Your name" />
+            <input type="email" placeholder="Email address" />
+            <textarea rows="3" placeholder="Your message…"></textarea>
+            <button type="button">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="info_footer">
+        <span>© 2024 Photography Studio. All rights reserved.</span>
+        <div class="footer_socials">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
     </section>
 
-    <section id="exhibits" class="section_placeholder">
-      <h2>Exhibits</h2>
-      <p>Curated exhibitions and featured collections</p>
-    </section>
-
-    <section id="events" class="section_placeholder">
-      <h2>Events</h2>
-      <p>Photography events, workshops, and photo walks</p>
-    </section>
-
-    <section id="store" class="section_placeholder">
-      <h2>Store</h2>
-      <p>Purchase prints, albums, and photography services</p>
-    </section>
-
-    <section id="contact" class="section_placeholder">
-      <h2>Contact</h2>
-      <p>Get in touch for bookings and inquiries</p>
-    </section>
-
-    <section id="feedback" class="section_placeholder">
-      <h2>Feedback</h2>
-      <p>We'd love to hear from you. Share your thoughts!</p>
-    </section>
   </body>
 </html>
