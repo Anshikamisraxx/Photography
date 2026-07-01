@@ -5,13 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Photography - Capture Every Moment</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style_improved.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   </head>
   <body>
+
+    <!-- Back to Top Button -->
+    <button class="back_to_top" id="backToTopBtn">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <input type="checkbox" id="check" />
     <div class="btn_one">
@@ -93,7 +98,7 @@
       <!-- Overlay + headline -->
       <div class="hero_overlay">
         <div class="hero_text">
-          <span class="hero_eyebrow">Portfolio · 2024</span>
+          <span class="hero_eyebrow">Portfolio · 2026</span>
           <h1>Capture Light.<br />Create Moments.</h1>
           <p>Professional Photography &amp; Visual Storytelling</p>
           <a href="#gallery" class="hero_cta">View Gallery <i class="fa-solid fa-arrow-down"></i></a>
@@ -142,6 +147,74 @@
       </div>
     </section>
 
+    <!-- ===== STATS SECTION (NEW) ===== -->
+    <section class="stats_section">
+      <div class="stats_container">
+        <div class="stat_item">
+          <div class="stat_number">500+</div>
+          <div class="stat_label">Projects Completed</div>
+        </div>
+        <div class="stat_item">
+          <div class="stat_number">150+</div>
+          <div class="stat_label">Happy Clients</div>
+        </div>
+        <div class="stat_item">
+          <div class="stat_number">15+</div>
+          <div class="stat_label">Years Experience</div>
+        </div>
+        <div class="stat_item">
+          <div class="stat_number">12</div>
+          <div class="stat_label">Awards Won</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS SECTION (NEW) ===== -->
+    <section class="testimonials_section">
+      <div class="testimonials_header">
+        <h2>Client Stories</h2>
+        <p>What our clients say about us</p>
+      </div>
+
+      <div class="testimonials_grid">
+        <div class="testimonial_card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial_text">"Absolutely exceptional work! The photographer captured every moment perfectly. Highly recommend for any special occasion."</p>
+          <div class="testimonial_author">
+            <div class="author_avatar">SJ</div>
+            <div class="author_info">
+              <div class="author_name">Sarah Johnson</div>
+              <div class="author_title">Event Organizer</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial_card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial_text">"Professional, creative, and attentive to detail. The portfolio photos transformed our brand's visual presence completely."</p>
+          <div class="testimonial_author">
+            <div class="author_avatar">MK</div>
+            <div class="author_info">
+              <div class="author_name">Michael Kumar</div>
+              <div class="author_title">Business Owner</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial_card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial_text">"Outstanding quality and amazing turnaround time. Every shot was stunning. Will definitely book again for our next project."</p>
+          <div class="testimonial_author">
+            <div class="author_avatar">RP</div>
+            <div class="author_info">
+              <div class="author_name">Riya Patel</div>
+              <div class="author_title">Wedding Planner</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== CONSOLIDATED INFO BLOCK ===== -->
     <section class="info_block">
       <div class="info_block_inner">
@@ -151,7 +224,7 @@
           <h3>Shortcuts</h3>
           <p>Quick access to your favourite galleries and curated collections.</p>
           <div class="info_card_links">
-            <a href="#">Best of 2024</a>
+            <a href="#">Best of 2026</a>
             <a href="#">Black &amp; White</a>
             <a href="#">Nature Series</a>
           </div>
@@ -162,8 +235,8 @@
           <h3>Exhibits</h3>
           <p>Curated exhibitions and featured collections on display this season.</p>
           <div class="info_card_links">
-            <a href="#">Urban Souls — Aug 2024</a>
-            <a href="#">Light &amp; Shadow — Sep 2024</a>
+            <a href="#">Urban Souls — Jan 2026</a>
+            <a href="#">Light &amp; Shadow — Feb 2026</a>
           </div>
         </div>
 
@@ -214,7 +287,7 @@
       </div>
 
       <div class="info_footer">
-        <span>© 2024 Photography Studio. All rights reserved.</span>
+        <span>© 2026 Photography Studio. All rights reserved.</span>
         <div class="footer_socials">
           <a href="#"><i class="fa-brands fa-instagram"></i></a>
           <a href="#"><i class="fa-brands fa-facebook"></i></a>
@@ -224,5 +297,34 @@
       </div>
     </section>
 
+    <script>
+      // Back to Top Button Functionality
+      const backToTopBtn = document.getElementById('backToTopBtn');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backToTopBtn.classList.add('show');
+        } else {
+          backToTopBtn.classList.remove('show');
+        }
+      });
+
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+
+      // Close sidebar when clicking on a link
+      const sidebarLinks = document.querySelectorAll('.sidebar_menu a');
+      const checkBox = document.getElementById('check');
+
+      sidebarLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          checkBox.checked = false;
+        });
+      });
+    </script>
   </body>
 </html>
