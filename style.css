@@ -8,49 +8,6 @@
 html { scroll-behavior: smooth; }
 body { background: #0a0a0a; color: #fff; }
 
-/* ==================== BACK TO TOP BUTTON ==================== */
-
-.back_to_top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, #FF006E, #FFBE0B);
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  z-index: 100;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(255, 0, 110, 0.3);
-}
-
-.back_to_top.show {
-  display: flex;
-  animation: slideUp 0.3s ease;
-}
-
-.back_to_top:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 35px rgba(255, 0, 110, 0.5);
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* ==================== SIDEBAR TOGGLE ==================== */
 
 #check { display: none; }
@@ -197,6 +154,10 @@ body { background: #0a0a0a; color: #fff; }
   overflow: hidden;
 }
 
+/*
+  True mosaic: 12-column × 10-row CSS grid, zero gap.
+  Photos tile edge-to-edge, covering the entire viewport.
+*/
 .mosaic {
   position: absolute;
   inset: 0;
@@ -221,46 +182,57 @@ body { background: #0a0a0a; color: #fff; }
 
 .tile:hover img { transform: scale(1.08); }
 
+/* — Placement: each tile covers specific grid cells — */
+
+/* 1. Misty Forest — big left block */
 .t1 {
   grid-column: 1 / 5;
   grid-row: 1 / 7;
 }
 
+/* 2. Desert Dunes — top centre */
 .t2 {
   grid-column: 5 / 9;
   grid-row: 1 / 5;
 }
 
+/* 3. Mountain Peak — top right */
 .t3 {
   grid-column: 9 / 13;
   grid-row: 1 / 6;
 }
 
+/* 4. City Night — centre mid */
 .t4 {
   grid-column: 5 / 8;
   grid-row: 5 / 8;
 }
 
+/* 5. Cherry Blossom — right mid */
 .t5 {
   grid-column: 8 / 13;
   grid-row: 6 / 9;
 }
 
+/* 6. Portrait — bottom left */
 .t6 {
   grid-column: 1 / 4;
   grid-row: 7 / 11;
 }
 
+/* 7. Lavender Field — bottom centre (wide) */
 .t7 {
   grid-column: 4 / 9;
   grid-row: 8 / 11;
 }
 
+/* 8. Wedding — bottom right */
 .t8 {
   grid-column: 9 / 13;
   grid-row: 9 / 11;
 }
 
+/* Full-cover overlay with gradient: edges dark, centre light */
 .hero_overlay {
   position: absolute;
   inset: 0;
@@ -275,12 +247,6 @@ body { background: #0a0a0a; color: #fff; }
   align-items: flex-end;
   justify-content: flex-start;
   padding: 0 6% 7%;
-  animation: fadeInOverlay 0.8s ease;
-}
-
-@keyframes fadeInOverlay {
-  from { opacity: 0; }
-  to { opacity: 1; }
 }
 
 .hero_text { max-width: 680px; }
@@ -296,18 +262,6 @@ body { background: #0a0a0a; color: #fff; }
   border: 1px solid rgba(255,190,11,0.4);
   padding: 5px 14px;
   border-radius: 20px;
-  animation: slideInLeft 0.6s ease;
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
 }
 
 .hero_text h1 {
@@ -318,18 +272,6 @@ body { background: #0a0a0a; color: #fff; }
   color: #fff;
   text-shadow: 0 4px 24px rgba(0,0,0,0.7);
   margin-bottom: 16px;
-  animation: slideInUp 0.8s ease 0.2s backwards;
-}
-
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .hero_text p {
@@ -339,14 +281,13 @@ body { background: #0a0a0a; color: #fff; }
   text-transform: uppercase;
   font-weight: 400;
   margin-bottom: 36px;
-  animation: slideInUp 0.8s ease 0.4s backwards;
 }
 
 .hero_cta {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: linear-gradient(135deg, #FF006E, #FF1493);
+  background: #FF006E;
   color: #fff;
   text-decoration: none;
   padding: 14px 32px;
@@ -355,12 +296,11 @@ body { background: #0a0a0a; color: #fff; }
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
-  transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1);
-  animation: slideInUp 0.8s ease 0.6s backwards;
+  transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
 }
 
 .hero_cta:hover {
-  background: linear-gradient(135deg, #FFBE0B, #FFD700);
+  background: #FFBE0B;
   color: #000;
   transform: translateY(-3px);
   box-shadow: 0 12px 30px rgba(255,190,11,0.35);
@@ -376,12 +316,6 @@ body { background: #0a0a0a; color: #fff; }
 .gallery_header {
   text-align: center;
   margin-bottom: 64px;
-  animation: fadeIn 0.8s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
 }
 
 .gallery_header h2 {
@@ -418,25 +352,6 @@ body { background: #0a0a0a; color: #fff; }
   cursor: pointer;
   border: 1px solid rgba(255,255,255,0.06);
   transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.35s;
-  animation: scaleIn 0.6s ease backwards;
-}
-
-.gallery_item:nth-child(1) { animation-delay: 0.1s; }
-.gallery_item:nth-child(2) { animation-delay: 0.2s; }
-.gallery_item:nth-child(3) { animation-delay: 0.3s; }
-.gallery_item:nth-child(4) { animation-delay: 0.4s; }
-.gallery_item:nth-child(5) { animation-delay: 0.5s; }
-.gallery_item:nth-child(6) { animation-delay: 0.6s; }
-
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
 }
 
 .gallery_item:hover {
@@ -481,150 +396,6 @@ body { background: #0a0a0a; color: #fff; }
 
 .gallery_item:hover .gallery_overlay h3 { transform: translateY(0); }
 
-/* ==================== STATS SECTION ==================== */
-
-.stats_section {
-  background: linear-gradient(135deg, #1a1a2e, #16213e);
-  padding: 60px 5%;
-  margin: 40px 0;
-  border-top: 1px solid rgba(255,0,110,0.2);
-  border-bottom: 1px solid rgba(255,0,110,0.2);
-}
-
-.stats_container {
-  max-width: 1300px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 40px;
-  text-align: center;
-}
-
-.stat_item {
-  animation: fadeIn 0.8s ease;
-}
-
-.stat_number {
-  font-size: 48px;
-  font-weight: 900;
-  background: linear-gradient(135deg, #FF006E, #FFBE0B);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 8px;
-}
-
-.stat_label {
-  font-size: 14px;
-  color: rgba(255,255,255,0.6);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-/* ==================== TESTIMONIALS SECTION ==================== */
-
-.testimonials_section {
-  background: #0a0a0a;
-  padding: 80px 5%;
-}
-
-.testimonials_header {
-  text-align: center;
-  margin-bottom: 60px;
-  animation: fadeIn 0.8s ease;
-}
-
-.testimonials_header h2 {
-  font-size: clamp(36px, 5vw, 64px);
-  font-weight: 900;
-  letter-spacing: -2px;
-  margin-bottom: 12px;
-  color: #fff;
-}
-
-.testimonials_header p {
-  font-size: 15px;
-  color: rgba(255,255,255,0.5);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.testimonials_grid {
-  max-width: 1300px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-
-.testimonial_card {
-  background: #131313;
-  border: 1px solid rgba(255,0,110,0.2);
-  border-radius: 12px;
-  padding: 40px;
-  transition: all 0.3s ease;
-  animation: scaleIn 0.6s ease backwards;
-}
-
-.testimonial_card:nth-child(1) { animation-delay: 0.1s; }
-.testimonial_card:nth-child(2) { animation-delay: 0.2s; }
-.testimonial_card:nth-child(3) { animation-delay: 0.3s; }
-
-.testimonial_card:hover {
-  border-color: #FF006E;
-  background: #181818;
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(255,0,110,0.15);
-}
-
-.stars {
-  color: #FFBE0B;
-  font-size: 14px;
-  margin-bottom: 12px;
-}
-
-.testimonial_text {
-  font-size: 15px;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.8;
-  margin-bottom: 20px;
-  font-style: italic;
-}
-
-.testimonial_author {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.author_avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #FF006E, #FFBE0B);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  color: #000;
-}
-
-.author_info {
-  text-align: left;
-}
-
-.author_name {
-  font-size: 14px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 2px;
-}
-
-.author_title {
-  font-size: 12px;
-  color: rgba(255,255,255,0.5);
-}
-
 /* ==================== CONSOLIDATED INFO BLOCK ==================== */
 
 .info_block {
@@ -649,15 +420,7 @@ body { background: #0a0a0a; color: #fff; }
   padding: 40px 36px;
   transition: background 0.25s;
   position: relative;
-  animation: fadeIn 0.6s ease backwards;
 }
-
-.info_card:nth-child(1) { animation-delay: 0.1s; }
-.info_card:nth-child(2) { animation-delay: 0.2s; }
-.info_card:nth-child(3) { animation-delay: 0.3s; }
-.info_card:nth-child(4) { animation-delay: 0.4s; }
-.info_card:nth-child(5) { animation-delay: 0.5s; }
-.info_card:nth-child(6) { animation-delay: 0.6s; }
 
 .info_card:hover { background: #181818; }
 .info_card--wide { grid-column: span 2; }
@@ -674,12 +437,6 @@ body { background: #0a0a0a; color: #fff; }
   font-size: 18px;
   color: #FF006E;
   margin-bottom: 20px;
-  transition: all 0.3s ease;
-}
-
-.info_card:hover .info_card_icon {
-  background: rgba(255,0,110,0.25);
-  transform: scale(1.1) rotate(5deg);
 }
 
 .info_card h3 {
@@ -739,15 +496,12 @@ body { background: #0a0a0a; color: #fff; }
   font-size: 13px;
   font-family: inherit;
   outline: none;
-  transition: border-color 0.2s, background 0.2s;
+  transition: border-color 0.2s;
   resize: none;
 }
 
 .feedback_form input:focus,
-.feedback_form textarea:focus {
-  border-color: #FF006E;
-  background: rgba(255,0,110,0.08);
-}
+.feedback_form textarea:focus { border-color: #FF006E; }
 
 .feedback_form input::placeholder,
 .feedback_form textarea::placeholder { color: rgba(255,255,255,0.28); }
@@ -756,7 +510,7 @@ body { background: #0a0a0a; color: #fff; }
 
 .feedback_form button {
   grid-column: span 2;
-  background: linear-gradient(135deg, #FF006E, #FF1493);
+  background: #FF006E;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -769,15 +523,11 @@ body { background: #0a0a0a; color: #fff; }
   align-items: center;
   justify-content: center;
   gap: 8px;
-  transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1);
+  transition: background 0.25s, transform 0.2s;
   width: fit-content;
 }
 
-.feedback_form button:hover {
-  background: linear-gradient(135deg, #FFBE0B, #FFD700);
-  color: #000;
-  transform: translateY(-2px);
-}
+.feedback_form button:hover { background: #FFBE0B; color: #000; transform: translateY(-2px); }
 
 .info_footer {
   max-width: 1300px;
@@ -796,26 +546,15 @@ body { background: #0a0a0a; color: #fff; }
 .footer_socials a {
   color: rgba(255,255,255,0.35);
   font-size: 15px;
-  transition: all 0.2s;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 8px;
+  transition: color 0.2s;
 }
 
-.footer_socials a:hover {
-  color: #fff;
-  border-color: #FF006E;
-  background: rgba(255,0,110,0.15);
-  transform: translateY(-3px);
-}
+.footer_socials a:hover { color: #FF006E; }
 
 /* ==================== RESPONSIVE ==================== */
 
 @media (max-width: 900px) {
+  /* Simplify mosaic to 2-column stacked on mobile */
   .mosaic {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(12, 1fr);
@@ -833,26 +572,11 @@ body { background: #0a0a0a; color: #fff; }
   .info_card--wide { grid-column: span 1; }
   .feedback_form { grid-template-columns: 1fr; }
   .feedback_form textarea, .feedback_form button { grid-column: span 1; }
-  
-  .stats_container { gap: 30px; }
-  .stat_number { font-size: 36px; }
 }
 
 @media (max-width: 600px) {
   .hero_overlay { padding: 0 5% 10%; }
   .info_footer { flex-direction: column; gap: 16px; text-align: center; }
-  
-  .back_to_top {
-    bottom: 20px;
-    right: 20px;
-    width: 45px;
-    height: 45px;
-    font-size: 18px;
-  }
-  
-  .stats_container { gap: 20px; }
-  .stat_number { font-size: 32px; }
-  .testimonials_grid { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
